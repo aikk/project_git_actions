@@ -11,3 +11,7 @@ def test_basic():
         driver = webdriver.Chrome(chrome_options=chrome_options)
     else:
         driver = webdriver.Chrome()
+    driver.get('http://127.0.0.1:8000/')
+    assert 'Hello, world!' in driver.page_source    
+    driver.close()
+
