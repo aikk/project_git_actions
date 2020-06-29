@@ -1,7 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
- 
+
+
 def test_basic():
     if os.environ.get('GITHUB_ACTIONS'):
         chrome_options = Options()
@@ -14,4 +15,3 @@ def test_basic():
     driver.get('http://127.0.0.1:8000/')
     assert 'Hello, world!' in driver.page_source    
     driver.close()
-
