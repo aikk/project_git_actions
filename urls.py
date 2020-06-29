@@ -3,9 +3,9 @@ from django.http import HttpResponse
 
 
 def hello(request):
-   return HttpResponse('Hello, world!')
+    return HttpResponse('Hello, world!')
 
 
 urlpatterns = [
-   path('', hello)
+    path('', hello)
 ]
