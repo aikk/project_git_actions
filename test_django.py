@@ -14,5 +14,5 @@ def test_basic():
     else:
         driver = webdriver.Chrome()
     driver.get('http://127.0.0.1:8000/')
-    assert 'Hello, world!' in driver.page_source
+    assert 'Hello, world!' == driver.page_source
     driver.close()
