@@ -1,11 +1,10 @@
-# import os
+import os
 
 from selenium import webdriver
-# from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.options import Options
 
 
 def test_basic():
-    """
     if os.environ.get('GITHUB_ACTIONS'):
         chrome_options = Options()
         chrome_options.add_argument('--headless')
@@ -14,9 +13,8 @@ def test_basic():
         driver = webdriver.Chrome(chrome_options=chrome_options)
     else:
         driver = webdriver.Chrome()
-    """
+
     driver = webdriver.Chrome()
     driver.get('http://127.0.0.1:8000/')
-    # body = driver.find_element_by_tag_name('body')
     assert 'Hello, world!' in driver.page_source
     driver.close()
