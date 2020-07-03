@@ -10,11 +10,12 @@ def test_basic():
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        driver = webdriver.Chrome(chrome_options=chrome_options)
+        with webdriver.Chrome(chrome_options=chrome_options) as driver:
+            yield driver
     else:
-        driver = webdriver.Chrome()
+        with webdriver.Chrome() as driver:
+            yield driver
 
-    driver = webdriver.Chrome()
     driver.get('http://127.0.0.1:8000/')
     assert 'Hello, world!' in driver.page_source
     driver.close()
