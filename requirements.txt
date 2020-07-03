@@ -1,6 +1,6 @@
-flake8==3.8.1
-isort
 pytest
-django
 pytest-django
+django
 selenium
+flake8
+isort
